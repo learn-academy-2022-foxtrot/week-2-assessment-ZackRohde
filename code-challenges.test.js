@@ -1,8 +1,8 @@
 // ASSESSMENT 2: Coding Practical Questions with Jest
 
-const { exportAllDeclaration } = require("@babel/types")
-const { it } = require("node:test")
-const { describe } = require("yargs")
+// const { exportAllDeclaration } = require("@babel/types")
+// const { it } = require("node:test")
+// const { describe } = require("yargs")
 
 // Please read all questions thoroughly
 // Pseudo coding is REQUIRED
@@ -25,32 +25,61 @@ const { describe } = require("yargs")
 
 // b) Create the function that makes the test pass.
 
-
-
-
-
 // --------------------1) Create a function that takes a object as an argument and decides if the number inside it is evenly divisible by three or not.
 
 // a) Create a test with expect statements for each of the variables provided.
 
-describe("divisibleByThree", () => {
-  it("decides if the number inside it is evenly divisible by three or not.", () => {
-    expect().toEqual()
-  })
-})
+// describe("divisibleByThree", () => {
+//   it("decides if the number inside it is evenly divisible by three or not.", () => {
+//     expect(divisibleByThree(object1)).toEqual("15 is divisible by three")
+//     expect(divisibleByThree(object2)).toEqual("0 is divisible by three")
+//     expect(divisibleByThree(object3)).toEqual("-7 is not divisible by three")
+//   })
+// })
+
+// ReferenceError: divisibleByThree is not defined
 
 const object1 = { number: 15 }
-// Expected output: "15 is divisible by three"
+// // Expected output: "15 is divisible by three"
 const object2 = { number: 0 }
-// Expected output: "0 is divisible by three"
+// // Expected output: "0 is divisible by three"
 const object3 = { number: -7 }
-// Expected output: "-7 is not divisible by three"
+// // Expected output: "-7 is not divisible by three"
 
 // b) Create the function that makes the test pass.
+
+// PSUEDO CODE
+// Create a function with the function name of divisibleByThree
+// Only one parameter (object)
+// Make a conditional statement checking to see if the value is divisble by three
+// Create a return 
+
+const divisibleByThree = (object) => {
+  if (object.number % 3 === 0) {
+    return `${object.number} is divisible by three`
+  } else if (object.number === 0) {
+    return `${object.number} is divisible by three`
+  } else if (object.number % 3 !== 0) {
+    return `${object.number} is not divisible by three`
+  } else {
+    return "Error"
+  }
+}
+
+// Test Suites: 1 passed, 1 total
 
 // --------------------2) Create a function that takes in an array of words and returns an array with all the words capitalized.
 
 // a) Create a test with expect statements for each of the variables provided.
+
+describe("capWords", () => {
+  it("returns an array with all the words capitalized.", () => {
+    expect(capWords(randomNouns1)).toEqual(["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"])
+    expect(capWords(randomNouns2)).toEqual(["Temperature", "Database", "Chopsticks", "Mango"])
+  })
+})
+
+// ReferenceError: capWords is not defined
 
 const randomNouns1 = ["streetlamp", "potato", "teeth", "conclusion", "nephew"]
 // Expected output: ["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"]
@@ -58,6 +87,19 @@ const randomNouns2 = ["temperature", "database", "chopsticks", "mango"]
 // Expected output: ["Temperature", "Database", "Chopsticks", "Mango"]
 
 // b) Create the function that makes the test pass.
+
+// PSUEDO CODE:
+// Create a function named capWords
+// Create an empty array 
+// Iterate through the array using .map method
+// In order to capitalize each first character I'll use the .toUpperCase method
+
+const capWords = () => {
+  let newArr = []
+
+  return value.charAt(0).toUpperCase() + element.slice(1).toLowerCase()
+}
+
 
 // --------------------3) Create a function that takes in a string and logs the index of the first vowel.
 
